@@ -6,6 +6,9 @@ import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -118,4 +121,28 @@ public class MainActivity extends AppCompatActivity {
 
         return false;
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return true;
+    }
+
+    // オプションメニューのアイテムが選択されたときに呼び出されるメソッド
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        TextView varTextView = (TextView) findViewById(R.id.textView);
+        switch (item.getItemId()) {
+            case R.id.item1:
+                varTextView.setText(R.string.login);
+                return true;
+            case R.id.item2:
+                varTextView.setText(R.string.history);
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
