@@ -21,7 +21,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
-    public final static String EXTRA_MYNAME = "com.reiji.kintaikanri.MYNAME";
 
     private Handler mHandler;
     private Timer mTimer;
@@ -64,14 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     //名前の値を取得をする
     public void start(View view) {
-        //EditTextの取得
-        EditText name = (EditText) findViewById(R.id.name);
-        //中身の取得
-        String myName = name.getText().toString().trim();
-        //中身の条件分岐
-        if (myName.equals("")){
-            name.setError("名前を入れてください");
-        }else{
+
             //時刻の値を取得
             TextView clock =
 
@@ -79,37 +71,25 @@ public class MainActivity extends AppCompatActivity {
             String time = clock.getText().toString().trim();
             // 次の画面へ移行
             Intent intent = new Intent(this, MyResult.class);
-            intent.putExtra(EXTRA_MYNAME, myName);
             startActivity(intent);
-        }
     }
 
 
+
     public void out(View view) {
-        //EditTextの取得
-        EditText name = (EditText) findViewById(R.id.name);
-        //中身の取得
-        String myName = name.getText().toString().trim();
-        //中身の条件分岐
-        if (myName.equals("")){
-            name.setError("名前を入れてください");
-        }else{
-            //時刻の値を取得
+
             TextView clock =
 
                     (TextView) findViewById(R.id.clock);
             String time = clock.getText().toString().trim();
             // 次の画面へ移行
             Intent intent = new Intent(this, OutResult.class);
-            intent.putExtra(EXTRA_MYNAME, myName);
             startActivity(intent);
-        }
-
     }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         //キーボードを閉じたいEditTextオブジェクト
-        EditText name = (EditText) findViewById(R.id.name);
         //画面全体のレイアウト
         android.support.constraint.ConstraintLayout mainLayout = (ConstraintLayout)findViewById(R.id.mainLayout);
         //キーボード表示を制御するためのオブジェクト
@@ -121,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
         return false;
     }
-
+    //toolbarにメニューボタンを表示
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -135,7 +115,8 @@ public class MainActivity extends AppCompatActivity {
         TextView varTextView = (TextView) findViewById(R.id.textView);
         switch (item.getItemId()) {
             case R.id.item1:
-                varTextView.setText(R.string.login);
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.item2:
                 varTextView.setText(R.string.history);

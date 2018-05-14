@@ -30,9 +30,6 @@ public class OutResult extends AppCompatActivity {
         outTime.setText("退勤時間：" + strDay + strTime);
 
         Intent intent = getIntent();
-        String myName = intent.getStringExtra(MainActivity.EXTRA_MYNAME);
-        TextView name = (TextView) findViewById(R.id.name);
-        name.setText(myName);
     }
 
     public void confirm(View view) {
