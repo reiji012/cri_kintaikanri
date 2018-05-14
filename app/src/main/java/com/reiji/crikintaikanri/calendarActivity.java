@@ -8,6 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 public class calendarActivity extends AppCompatActivity {
 
@@ -26,6 +32,7 @@ public class calendarActivity extends AppCompatActivity {
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SimpleDateFormat format = new SimpleDateFormat("yyyy.MM", Locale.US);
                 mCalendarAdapter.prevMonth();
                 titleText.setText(mCalendarAdapter.getTitle());
             }

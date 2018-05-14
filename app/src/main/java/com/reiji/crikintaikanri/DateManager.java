@@ -50,6 +50,16 @@ public class DateManager {
         }
     }
 
+    public boolean isCurrentDate(Date date){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd", Locale.US);
+        String currentDate = format.format(mCalendar.getTime());
+        if (currentDate.equals(format.format(date))){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     //週数を取得
     public int getWeeks(){
         return mCalendar.getActualMaximum(Calendar.WEEK_OF_MONTH);
