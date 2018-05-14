@@ -112,14 +112,14 @@ public class MainActivity extends AppCompatActivity {
     // オプションメニューのアイテムが選択されたときに呼び出されるメソッド
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        TextView varTextView = (TextView) findViewById(R.id.textView);
         switch (item.getItemId()) {
             case R.id.item1:
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.item2:
-                varTextView.setText(R.string.history);
+                Intent history = new Intent(this, calendarActivity.class);
+                startActivity(history);
                 return true;
 
         }
