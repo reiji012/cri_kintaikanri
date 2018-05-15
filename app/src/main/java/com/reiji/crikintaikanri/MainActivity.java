@@ -66,9 +66,7 @@ public class MainActivity extends AppCompatActivity {
     public void start(View view) {
 
             //時刻の値を取得
-            TextView clock =
-
-                    (TextView) findViewById(R.id.clock);
+            TextView clock = (TextView) findViewById(R.id.clock);
             String time = clock.getText().toString().trim();
             // 次の画面へ移行
             Intent intent = new Intent(this, MyResult.class);
@@ -79,9 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void out(View view) {
 
-            TextView clock =
-
-                    (TextView) findViewById(R.id.clock);
+            TextView clock = (TextView) findViewById(R.id.clock);
             String time = clock.getText().toString().trim();
             // 次の画面へ移行
             Intent intent = new Intent(this, OutResult.class);
