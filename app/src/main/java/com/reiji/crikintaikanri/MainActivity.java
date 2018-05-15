@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -124,6 +125,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+    //バックキーの制御
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode != KeyEvent.KEYCODE_BACK){
+            return super.onKeyDown(keyCode, event);
+        } else {
+            return false;
+        }
     }
 
 }

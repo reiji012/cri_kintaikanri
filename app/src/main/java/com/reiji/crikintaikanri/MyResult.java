@@ -3,6 +3,7 @@ package com.reiji.crikintaikanri;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -36,5 +37,13 @@ public class MyResult extends AppCompatActivity {
     public void confirm(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+    //バックキーの制御
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode != KeyEvent.KEYCODE_BACK){
+            return super.onKeyDown(keyCode, event);
+        } else {
+            return false;
+        }
     }
 }
