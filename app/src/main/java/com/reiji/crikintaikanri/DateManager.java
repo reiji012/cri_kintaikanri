@@ -50,8 +50,9 @@ public class DateManager {
         }
     }
 
+    //今日かどうか確認
     public boolean isCurrentDate(Date date){
-        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd", Locale.US);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.d", Locale.US);
         String currentDate = format.format(mCalendar.getTime());
         if (currentDate.equals(format.format(date))){
             return true;

@@ -32,7 +32,6 @@ public class calendarActivity extends AppCompatActivity {
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SimpleDateFormat format = new SimpleDateFormat("yyyy.MM", Locale.US);
                 mCalendarAdapter.prevMonth();
                 titleText.setText(mCalendarAdapter.getTitle());
             }

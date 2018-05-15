@@ -68,7 +68,7 @@ public class CalendarAdapter extends BaseAdapter{
         }
 
         //今日の日付を緑色に
-        if (mDateManager.isCurrentDate(dateArray.get(position))&&mDateManager.isCurrentMonth(dateArray.get(position))){
+        if (mDateManager.isCurrentDate(dateArray.get(position))){
             convertView.setBackgroundColor(Color.GREEN);
         }
 
