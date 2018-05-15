@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MyResult extends AppCompatActivity {
@@ -16,19 +17,13 @@ public class MyResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_result);
 
-        Calendar cal = Calendar.getInstance();       //カレンダーを取得
+        Calendar calendar = Calendar.getInstance();       //カレンダーを取得
 
-        int iYear = cal.get(Calendar.YEAR);         //年を取得
-        int iMonth = cal.get(Calendar.MONTH);       //月を取得
-        int iDate = cal.get(Calendar.DATE);         //日を取得
-        int iHour = cal.get(Calendar.HOUR_OF_DAY);         //時を取得
-        int iMinute = cal.get(Calendar.MINUTE);    //分を取得
+        SimpleDateFormat format = new SimpleDateFormat("MM月dd日　HH時mm分");
 
-        String strDay = iMonth + "月" + iDate + "日　";     //日付を表示形式で設定
-        String strTime = iHour + "時" + iMinute + "分"; //時刻を表示形式で設
 
         TextView startTime = (TextView)findViewById(R.id.startTime);
-        startTime.setText("退勤時間：" + strDay + strTime);
+        startTime.setText(format.format("出勤時間: " + calendar.getTime()));
 
         Intent intent = getIntent();
 
