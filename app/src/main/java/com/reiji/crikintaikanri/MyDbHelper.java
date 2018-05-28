@@ -18,11 +18,13 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL(MyAppConstract.WorkTimes.CREATE_TABLE);
+        db.execSQL(MyAppConstract.WorkTimes.INIT_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL(MyAppConstract.WorkTimes.DROP_TABLE);
+        onCreate(db);
     }
 }

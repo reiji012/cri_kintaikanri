@@ -1,13 +1,16 @@
 package com.reiji.crikintaikanri;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -50,6 +53,22 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });}
         },0,1000);
+
+        //DB
+        MyDbHelper myDbHelper = new MyDbHelper(this);
+        SQLiteDatabase db = myDbHelper.getWritableDatabase();
+        //DBのClose: androidが勝手にやってくれる
+
+
+        //insert
+        ContentValues values = new ContentValues();
+        values.put(MyAppConstract.WorkTimes.WORK_YEAR, 2018);
+        values.put(MyAppConstract.WorkTimes.WORK_MONTH, 05);
+        values.put(MyAppConstract.WorkTimes.WORK_DATE, 28);
+        values.put(MyAppConstract.WorkTimes.START_TIME, "09:17");
+        values.put(MyAppConstract.WorkTimes.OVER_TIME, "17:30");
+        long newId = db.insert(MyAppConstract.WorkTimes.TABLE_NAME,null,values);
+        Log.v("DB_TEST", "Inseted ID:" + newId);
     }
 
     @Override
