@@ -1,4 +1,4 @@
-package com.reiji.crikintaikanri;
+package com.reiji.crikintaikanri.Repository.SQLite;
 
 import android.provider.BaseColumns;
 

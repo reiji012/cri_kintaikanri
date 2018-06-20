@@ -1,4 +1,4 @@
-package com.reiji.crikintaikanri;
+package com.reiji.crikintaikanri.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
+
+import com.reiji.crikintaikanri.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

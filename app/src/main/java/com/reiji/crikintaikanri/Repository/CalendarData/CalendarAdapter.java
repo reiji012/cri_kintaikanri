@@ -1,4 +1,4 @@
-package com.reiji.crikintaikanri;
+package com.reiji.crikintaikanri.Repository.CalendarData;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -7,8 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.reiji.crikintaikanri.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

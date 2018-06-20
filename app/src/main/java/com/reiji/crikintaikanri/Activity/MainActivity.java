@@ -1,4 +1,4 @@
-package com.reiji.crikintaikanri;
+package com.reiji.crikintaikanri.Activity;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -16,8 +16,11 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.TextView;
+
+import com.reiji.crikintaikanri.Repository.SQLite.MyAppConstract;
+import com.reiji.crikintaikanri.Repository.SQLite.MyDbHelper;
+import com.reiji.crikintaikanri.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
